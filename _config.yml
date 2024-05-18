@@ -3,7 +3,7 @@ email:              dst05054@naver.com
 description:        A Blog TM
 author:             TAEMIN KIM
 baseurl:            "/startbootstrap-clean-blog-jekyll"
-url:                "https://temmmin.github.io "
+url:                "https://temmmin.github.io"
 
 # Social Profiles
 twitter_username:   none
