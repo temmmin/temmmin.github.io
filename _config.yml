@@ -1,25 +1,45 @@
-title:              Clean Blog TEST
-email:              dst05054@naver.com
-description:        A Blog TM
-author:             TAEMIN KIM
-baseurl:            "/startbootstrap-clean-blog-jekyll"
-url:                "https://temmmin.github.io"
+title: TM TECH
+description: >-
+  Build your own portfolio <br>
+  with Hyde.
+url: "https://temmmin.github.io"
+baseurl: ""
+github: temmmin
+email: dst05054@naver.com
+google_analytics: "UA_TOKEN"
 
-# Social Profiles
-twitter_username:   none
-github_username:    none
-facebook_username:  none
-instagram_username:  
-linkedin_username:
+exclude: [README.md, Gemfile, Gemfile.lock]
 
-# Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+comments:
+  enabled: true
+  repo: "REPO_COMMENTS_PATH"
+  issue-term: pathname
 
-# Build settings
-markdown:           kramdown
-paginate:           5
-paginate_path:      "/posts/page:num/"
-plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+collections:
+  pages:
+    output: true
+  projects:
+    output: true
+  tags:
+    output: true
+
+defaults:
+  - scope:
+      type: pages
+    values:
+      layout: default
+  - scope:
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:title
+  - scope:
+      type: projects
+    values:
+      layout: project
+      permalink: /projects/:title
+  - scope:
+      type: tags
+    values:
+      layout: tag
+      permalink: /tags/:title

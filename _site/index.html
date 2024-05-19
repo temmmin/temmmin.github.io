@@ -1,293 +1,155 @@
 <!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="TM TECH,blog,portfolio" />
+  <meta name="description" content="Build your own portfolio <br> with Hyde." />
+  <meta name="author" content="TM TECH" />
+  <meta name="theme-color" content="#4568f0" /> <!-- Edit this -->
+  <meta name="msapplication-TileColor" content="#ffffff" /> <!-- Edit this -->
 
-<html>
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content=" TM TECH"
+  />
+  <meta property="og:description" content='Build your own portfolio <br> with Hyde.' />
+  <meta property="og:image" content="/assets/images/projects/demo.jpg" /> <!-- Edit this -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" /> <!-- Edit this -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" /> <!-- Edit this -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" /> <!-- Edit this -->
+  <link rel="manifest" href="/assets/images/site.webmanifest" /> 
+  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#4568f0" /> <!-- Edit this -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-4-grid@3.3.0/css/grid.min.css" />
+  <link rel="stylesheet" href="/assets/css/hyde.css" />
+  <link rel="stylesheet" href="/assets/css/monokai.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA_TOKEN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>
-    Clean Blog TEST
-  </title>
-
-  <meta name="description" content="A Blog TM">
-
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="/startbootstrap-clean-blog-jekyll/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/startbootstrap-clean-blog-jekyll/">
-  <link rel="alternate" type="application/rss+xml" title="Clean Blog TEST" href="/startbootstrap-clean-blog-jekyll/feed.xml">
-
+    gtag("config", "UA_TOKEN");
+  </script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://kit.fontawesome.com/e9e8beb1d5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="/assets/js/hyde.js"></script>
+  <title> TM TECH</title>
 </head>
 
-
-<body>
-
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="/startbootstrap-clean-blog-jekyll/">Clean Blog TEST</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/startbootstrap-clean-blog-jekyll/">Home</a>
+  <body>
+    <header class="hyde header main">
+  <nav class="hyde navbar-parent main">
+    
+    <div class="hyde mobile-nav-wrapper">
+      <div class="hyde container">
+        <ul class="hyde mobile-nav">
+          <div class="hyde mobile-nav-row">
+            <a class="hyde mobile-nav-item logo" href=""><i class="fas fa-meteor"></i> TM TECH</a>
+            <a class="hyde mobile-nav-item close-btn"><i class="fas fa-times"></i></a>
+          </div>
+              
+          <a class="hyde mobile-nav-item" href="/about">About</a>
+             
+          <a class="hyde mobile-nav-item" href="/blog">Blog</a>
+             
+          <a class="hyde mobile-nav-item" href="/portfolio">Portfolio</a>
+             
+          <a class="hyde mobile-nav-item" href="/projects">Projects</a>
+             
+        </ul>
+      </div>
+    </div>
+    <div class="hyde container">
+      <ul class="hyde navbar">
+        <li class="hyde nav-item">
+          <a class="hyde nav-logo" href=""><i class="fas fa-meteor"></i> TM TECH</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/startbootstrap-clean-blog-jekyll/about">About</a>
+        <li class="hyde nav-toggler">
+          <a class="hyde nav-toggle-btn"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/startbootstrap-clean-blog-jekyll/posts">Posts</a>
+            
+        <li class="hyde nav-item">
+          <a href="/about">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/startbootstrap-clean-blog-jekyll/contact">Contact</a>
+           
+        <li class="hyde nav-item">
+          <a href="/blog">Blog</a>
         </li>
+           
+        <li class="hyde nav-item">
+          <a href="/portfolio">Portfolio</a>
+        </li>
+           
+        <li class="hyde nav-item">
+          <a href="/projects">Projects</a>
+        </li>
+           
       </ul>
     </div>
+  </nav>
+</header>
+
+    <section class="hyde main">
+       <div class="hyde jumbotron main">
+  <div class="hyde container">
+    <h1>Build your own portfolio <br> with Hyde.</h1>
+    <h2 class="hyde main-desc">Hyde와 함께 자신만의 블로그 / 포트폴리오를 만들어보세요</h2>
+    <a href="/about" class="hyde btn btn-light">start exploring</a>
   </div>
-</nav>
-
-
-  <!-- Page Header -->
-
-<header class="masthead" style="background-image: url('/startbootstrap-clean-blog-jekyll/img/bg-index.jpg')">
-  
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>Clean Blog TEST</h1>
-            
-            <span class="subheading">A Blog TM</span>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-
-        
-
-        <!-- Home Post List -->
-        
-
-        <article class="post-preview">
-          <a href="/startbootstrap-clean-blog-jekyll/2020/01/31/man-must-explore.html">
-            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-            
-            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            TAEMIN KIM
-            
-            on
-            January 31, 2020 &middot; <span class="reading-time" title="Estimated read time">
-  
-   4 mins  read </span>
-            
-          </p>
-        </article>
-
-        <hr>
-
-        
-
-        <article class="post-preview">
-          <a href="/startbootstrap-clean-blog-jekyll/2020/01/31/heartbeats.html">
-            <h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2>
-            
-            <h3 class="post-subtitle">Never in all their history have men been able truly to conceive of the world...</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            TAEMIN KIM
-            
-            on
-            January 31, 2020 &middot; <span class="reading-time" title="Estimated read time">
-  
-   4 mins  read </span>
-            
-          </p>
-        </article>
-
-        <hr>
-
-        
-
-        <article class="post-preview">
-          <a href="/startbootstrap-clean-blog-jekyll/2020/01/30/prophecy.html">
-            <h2 class="post-title">Science has not yet mastered prophecy</h2>
-            
-            <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            TAEMIN KIM
-            
-            on
-            January 30, 2020 &middot; <span class="reading-time" title="Estimated read time">
-  
-   4 mins  read </span>
-            
-          </p>
-        </article>
-
-        <hr>
-
-        
-
-        <article class="post-preview">
-          <a href="/startbootstrap-clean-blog-jekyll/2020/01/29/exploration.html">
-            <h2 class="post-title">Failure is not an option</h2>
-            
-            <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            TAEMIN KIM
-            
-            on
-            January 29, 2020 &middot; <span class="reading-time" title="Estimated read time">
-  
-   4 mins  read </span>
-            
-          </p>
-        </article>
-
-        <hr>
-
-        
-
-        <article class="post-preview">
-          <a href="/startbootstrap-clean-blog-jekyll/2020/01/28/dreams.html">
-            <h2 class="post-title">The dreams of yesterday are the hopes of today and the reality of tomorrow.</h2>
-            
-            <h3 class="post-subtitle">Never in all their history have men been able truly to conceive of the world...</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            TAEMIN KIM
-            
-            on
-            January 28, 2020 &middot; <span class="reading-time" title="Estimated read time">
-  
-   4 mins  read </span>
-            
-          </p>
-        </article>
-
-        <hr>
-
-        
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="/startbootstrap-clean-blog-jekyll/posts">View All Posts &rarr;</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Footer -->
-
-<hr>
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          
-          <li class="list-inline-item">
-            <a href="mailto:dst05054@naver.com">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+</div>
+ 
+    </section>
+    <footer class="hyde footer-wrapper">
+  <div class="hyde container">
+    <div class="hyde footer">
+      <div class="hyde footer-left">
+        <ul class="hyde footer-menu links">
+              
+          <li>
+            <a href="/about">About</a>
           </li>
-          
-          
-          <li class="list-inline-item">
-            <a href="https://twitter.com/none">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+            
+          <li>
+            <a href="/blog">Blog</a>
           </li>
-          
-          
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/none">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+            
+          <li>
+            <a href="/portfolio">Portfolio</a>
           </li>
-          
-          
-          
-          <li class="list-inline-item">
-            <a href="https://github.com/none">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
+            
+          <li>
+            <a href="/projects">Projects</a>
           </li>
-          
-          
+             
         </ul>
-        <p class="copyright text-muted">Copyright &copy; TAEMIN KIM 2024</p>
+        <p class="text">&copy; 2024 TM TECH</p>
+      </div>
+      <div class="hyde footer-right">
+        <ul class="hyde footer-menu social">
+          <li>
+            <a href="https://github.com/temmmin"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="mailto:dst05054@naver.com"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+        <p class="text">
+          Made with <a href="https://github.com/ChemistryX/hyde"><i class="fas fa-meteor"></i> Hyde</a>
+        </p>
       </div>
     </div>
   </div>
 </footer>
 
-
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/startbootstrap-clean-blog-jekyll/assets/vendor/startbootstrap-clean-blog/js/scripts.js"></script>
-
-<script src="/startbootstrap-clean-blog-jekyll/assets/scripts.js"></script>
-
-
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-XXXXXXXXX-X');
-</script>
-
-
-
-</body>
-
+  </body>
 </html>

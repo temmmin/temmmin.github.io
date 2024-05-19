@@ -1,154 +1,123 @@
-# [Start Bootstrap - Clean Blog Jekyll](https://startbootstrap.com/themes/clean-blog-jekyll/) - Official Jekyll Version
+# [![header](https://raw.githubusercontent.com/ChemistryX/hyde/master/readme-header.png)](https://chemistryx.github.io/hyde/)
 
-[Clean Blog Jekyll](https://startbootstrap.com/themes/clean-blog-jekyll/) is a stylish, responsive blog theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working contact form powered by [Formspree](https://formspree.io/).
+# Hyde
 
-This repository holds the official Jekyll version of the Clean Blog theme on Start Bootstrap!
+[Jekyll](https://https://jekyllrb.com/)로 만들어진 개인 블로그 / 포트폴리오입니다.
 
-## Preview
+실제 데모는 [이곳](https://chemistryx.github.io/hyde/)에서 보실 수 있습니다.
 
-[![Clean Blog (Jekyll) Preview](https://startbootstrap.com/assets/img/screenshots/themes/clean-blog-jekyll.png)](http://StartBootstrap.github.io/startbootstrap-clean-blog-jekyll/)
+## 설치하기
 
-**[View Live Preview](http://StartBootstrap.github.io/startbootstrap-clean-blog-jekyll/)**
+`참고` [Ruby 2.4](https://www.ruby-lang.org)이상이 설치되어 있어야 합니다.
 
-## Installation & Setup
+```
+bundle install
+```
 
-### Using RubyGems
+## 설정하기
 
-When installing the theme using RubyGems, demo images, posts, and pages are not included. Follow the instructions below for complete setup.
+**1. `_config.yml` 수정**
 
-1. (Optional) Create a new Jekyll site: `jekyll new my-site`
-2. Replace the current theme in your `Gemfile` with `gem "jekyll-theme-clean-blog"`.
-3. Install the theme (run the command inside your site directory): `bundle install`
-4. Replace the current theme in your `_config.yml` file with `theme: jekyll-theme-clean-blog`.
-5. Build your site: `bundle exec jekyll serve`
+```yaml
+title: Hyde
+description: >-
+  Build your own portfolio <br>
+  with Hyde.
+url: "https://chemistryx.github.io/hyde"
+github: ChemistryX
+email: changeme@chemistryx.me
+google_analytics: "UA_TOKEN"
 
-Assuming there are no errors and the site is building properly, follow these steps next:
+exclude: [README.md, Gemfile, Gemfile.lock]
 
-1. Create the following pages if they do not exist already (or change the extension of existing markdown files from `.md` to `.html`):
+comments:
+  enabled: true
+  repo: "REPO_COMMENTS_PATH"
+  issue-term: pathname
+  theme: github-light
+```
 
-   * `index.html` - set to `layout: home`
-   * `about.html` - set to `layout: page`
-   * `contact.html` - set to `layout: page`
-   * `posts/index.html` - set to `layout: page` (you will also need to create a `posts` directory)
+`title`: 웹사이트 전반에서 표시될 이름입니다.(네비게이션 바, 푸터 등)
 
-2. Configure the `index.html` front matter. Example:
+`description`: 초기 페이지 설명 문구에 들어갈 내용입니다.
 
-    ```markdown
-    ---
-    layout: home
-    background: '/PATH_TO_IMAGE'
-    ---
-    ```
+`url`: 사이트의 주소를 적어주세요. 사이트맵 및 기타 부가기능을 설정하는 데 필요합니다.
 
-3. Configure the `about.html`, `contact.html`, and `posts/index.html` front matter. Example:
+`github`: 본인 GitHub 사용자 이름을 적어주세요. 푸터에 있는 버튼에 사용됩니다.
 
-    ```markdown
-    ---
-    layout: page
-    title: Page Title
-    description: This is the page description.
-    background: '/PATH_TO_IMAGE'
-    ---
-    ```
+`email`: 본인의 이메일을 적어주세요. 소셜 기능 및 푸터에 있는 버튼에 사용됩니다.
 
-4. For each post in the `_posts` directory, update the front matter. Example:
+`google_analytics`: [Google Analytics](https://analytics.google.com)에서 발급한 추적 ID를 입력해주세요.
 
-    ```markdown
-    ---
-    layout: post
-    title: "Post Title"
-    subtitle: "This is the post subtitle."
-    date: YYYY-MM-DD HH:MM:SS
-    background: '/PATH_TO_IMAGE'
-    ---
-    ```
+`comments`: 블로그 하단부에 노출되는 댓글 설정입니다. 댓글은 GitHub 계정이 있어야 달 수 있습니다. 자세한 내용은 [이곳](https://utteranc.es)을 참조하세요.
 
-    For reference, look at the [demo repository](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll) to see how the files are set up.
+**2. 기타 부가적인 내용 수정**
 
-5. Add the form to the `contact.html` page. Add the following code to your `contact.html` page:
+`robots.txt`: 기존 URL을 본인 사이트 URL에 맞게 수정
 
-    ```html
-    <form name="sentMessage" id="contactForm" novalidate>
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label>Name</label>
-          <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label>Email Address</label>
-          <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="form-group col-xs-12 floating-label-form-group controls">
-          <label>Phone Number</label>
-          <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label>Message</label>
-          <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <br>
-      <div id="success"></div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
-      </div>
-    </form>
-    ```
+`assets/images/site.webmanifest`: 내용을 본인 사이트에 맞게 수정
 
-    Make sure you have the `email` setting in your `_config.yml` file set to a working email address! Once this is set, fill out the form and then check your email, verify the email address using the link sent to you by Formspree, and then the form will be working!
+- 그 외 내용들을 코드 내부에 주석으로 달아놓았으니 참고하시길 바랍니다.
 
-6. Build your site: `bundle exec jekyll serve`
+## 실행하기
 
-### Using Core Files
+```
+jekyll serve
+```
 
-When using the core files, the demo images, posts, and pages are all included with the download. After following the instructions below, you can then go and change the content of the pages and posts.
+## 글 작성하기
 
-1. [Download](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll/archive/master.zip) or Clone the repository.
-2. Update the following configuration settings in your `_config.yml` file:
+**1. `_data/authors.yml`에 본인 정보 등록**
 
-    * `baseurl`
-    * `url`
-    * `title`
-    * `email` (after setting this setting to a working email address, fill out the form on the contact page and send it - then check your email and verify the address and the form will send you messages when used)
-    * `description`
-    * `author`
-    * `twitter_username` (Optional)
-    * `facebook_username` (Optional)
-    * `github_username` (Optional)
-    * `linkedin_username` (Optional)
-    * `instagram_username` (Optional)
+```yaml
+- name: 웹사이트에서 표시될 이름
+  email: 글 하단 signature에 표시될 이메일
+  image: 프로필 이미지
+```
 
-3. Build your site: `bundle exec jekyll serve`
+**2. `_tags`디렉토리에 사용할 새 태그 생성**
 
-## Bugs and Issues
+```
+---
+title: 웹사이트에서 표시될 이름
+identifier: post에서 사용될 식별자(소문자, 띄어쓰기 대신 하이픈 사용)
+description: 태그 페이지에 표시될 설명
+---
+```
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll/issues) here on GitHub!
+**3. `_posts`디렉토리에 `yyyy-mm-dd-제목.md`파일 생성**
+**4. 해당 파일 Front Matter 작성**
 
-## About
+```
+---
+title: 웹사이트에서 표시될 이름
+tags: [앞서 작성한 태그의 identifier, 여러개 가능]
+author: 앞서 작성한 작성자의 name
+---
+```
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+## 포트폴리오 추가하기
 
-* <https://startbootstrap.com>
-* <https://twitter.com/SBootstrap>
+**1. `_data/portfolio.yml`에 하단 구문 추가**
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**.
+```yaml
+- title: 표시될 이름
+  description: 이름 하단에 들어갈 설명
+  image: <assets/images/portfolio/>내에 위치한 이미지 파일의 이름(확장자 포함)
+```
 
-* <http://davidmiller.io>
-* <https://twitter.com/davidmillerhere>
-* <https://github.com/davidtmiller>
+## 프로젝트 추가하기
 
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+**1. `_projects`디렉토리에 `제목.md`파일 생성**
 
-## Copyright and License
+**2. 해당 파일 작성**
 
-Copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll/blob/master/LICENSE) license.
+```yaml
+---
+title: 프로젝트 제목
+description: 프로젝트 설명
+image: <assets/images/projects/>내에 위치한 이미지 파일의 이름(확장자 포함)
+date: 프로젝트 시행 날짜(yyyy-mm-dd) - 정렬에 사용됩니다.
+---
+내용
+```
