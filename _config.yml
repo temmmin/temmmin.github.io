@@ -6,7 +6,7 @@ baseurl: ""
 github: temmmin
 email: dst05054@naver.com
 google_analytics: "UA_TOKEN"
-mainimg: https://github.com/temmmin/temmmin.github.io/blob/main/main.jpg
+
 exclude: [README.md, Gemfile, Gemfile.lock]
 
 comments:
