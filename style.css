@@ -1,6 +1,6 @@
 /* 기본 스타일 */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -10,24 +10,28 @@ body {
 
 /* 헤더 스타일 */
 header {
-  text-align: center;
-  background-color: #0077b6;
+  text-align: center; /* 중앙 정렬 */
+  background-color: #0077b6; /* 헤더 배경 색상 */
   color: white;
   padding: 20px;
 }
 
 header img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  display: block; /* 이미지를 한 줄로 표시 */
+  margin: 0 auto; /* 이미지 중앙 정렬 */
+  width: 150px; /* 프로필 사진 크기 */
+  border-radius: 50%; /* 둥근 모양 */
+  margin-bottom: 10px; /* 텍스트와 간격 */
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* 이름 글자 크기 */
+  margin: 0;
 }
 
 header p {
   margin: 0.5rem 0;
+  font-size: 1.2rem; /* 소개 글자 크기 */
 }
 
 /* 간단 소개 섹션 */
@@ -41,53 +45,96 @@ header p {
   color: #0077b6; /* 텍스트 색상 */
 }
 
-/* 연구 분야 */
+/* 연구 분야 섹션 */
 section h2 {
-  text-align: center;
-  color: #0077b6;
+  text-align: center; /* 제목 중앙 정렬 */
+  color: #0077b6; /* 섹션 제목 색상 */
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd; /* 섹션 제목 하단 라인 */
+  padding-bottom: 5px;
 }
 
 section ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  display: flex; /* 가로 정렬 */
+  justify-content: center; /* 중앙 정렬 */
   padding: 0;
+  margin: 10px 0;
 }
 
 section ul li {
-  margin: 0 10px;
+  margin: 0 15px;
+  font-size: 1.2rem;
 }
 
 section ul li a {
-  text-decoration: none;
-  color: #0077b6;
+  text-decoration: none; /* 밑줄 제거 */
+  color: #0077b6; /* 링크 색상 */
+  font-weight: bold;
 }
 
 section ul li a:hover {
-  color: #005f8d;
+  color: #005f8d; /* 마우스 올렸을 때 색상 */
 }
 
 /* 스킬 섹션 */
 .skills {
   display: flex;
   justify-content: center; /* 중앙 정렬 */
-  flex-wrap: wrap; /* 여러 줄로 정렬 */
+  flex-wrap: wrap; /* 여러 줄로 표시 */
   margin: 20px 0;
 }
 
 .skills div {
-  text-align: center; /* 텍스트 정렬 */
+  text-align: center; /* 텍스트 중앙 정렬 */
   margin: 15px;
 }
 
 .skills img {
-  width: 80px; /* 아이콘 크기 조정 */
-  height: 80px; /* 아이콘 크기 조정 */
+  width: 80px; /* 아이콘 크기 */
+  height: 80px;
 }
 
 .skills p {
   margin-top: 0.5rem;
   font-size: 1rem;
+}
+
+/* 학위 섹션 */
+section ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* 논문 및 학회 발표 섹션 */
+.publications h3 {
+  font-size: 1.5rem;
+  color: #005f8d;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.publications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.publications ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.publications ul li a {
+  text-decoration: none;
+  color: #0077b6;
+}
+
+.publications ul li a:hover {
+  text-decoration: underline;
+  color: #005f8d;
 }
 
 /* 푸터 스타일 */
