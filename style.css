@@ -19,12 +19,12 @@ header {
 
 header .logo {
   position: absolute;
-  top: 20px; /* 헤더의 상단 여백 */
-  left: 20px; /* 헤더의 왼쪽 여백 */
+  top: 20px;
+  left: 20px;
 }
 
 header .logo img {
-  width: 50px; /* 로고 크기 */
+  width: 50px;
   height: auto;
   display: block;
 }
@@ -54,9 +54,10 @@ header p {
   padding: 1.5rem 2rem;
   font-size: 1.2rem;
   background-color: #e0f7fa;
-  margin: 1rem 0;
+  margin: 1rem auto;
   border-radius: 10px;
   color: #0077b6;
+  max-width: 800px;
 }
 
 /* 연구 분야 섹션 */
@@ -71,6 +72,7 @@ section ul {
   display: flex;
   justify-content: center;
   padding: 0;
+  flex-wrap: wrap; /* 모바일에서 잘리지 않도록 */
 }
 
 section ul li {
@@ -127,6 +129,19 @@ section h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #0077b6;
+  text-align: center; /* 중간 정렬 */
+}
+
+section ul {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 800px; /* 중간 정렬 유지 */
+  text-align: center;
+}
+
+section ul li {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
 }
 
 /* 푸터 스타일 */
@@ -144,4 +159,38 @@ footer a {
 
 footer a:hover {
   color: #90e0ef;
+}
+
+/* 모바일 환경 대응 (미디어 쿼리) */
+@media (max-width: 768px) {
+  header img {
+    width: 200px;
+    height: 250px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  section ul {
+    flex-direction: column; /* 리스트가 세로로 정렬되도록 */
+  }
+
+  .skills img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skills p {
+    font-size: 0.9rem;
+  }
 }
