@@ -9,39 +9,39 @@ body {
   color: #333;
 }
 
+/* 네비게이션 바 스타일 */
 .navbar {
-  background-color: #0077b6; /* 네비게이션 바 배경색 */
-  padding: 10px 20px; /* 내부 여백 */
-  position: fixed; /* 화면 상단 고정 */
-  top: 0;
-  left: 0;
-  width: 100%; /* 전체 너비 */
-  z-index: 1000; /* 다른 요소보다 위에 표시 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 네비게이션 바 그림자 */
+  background-color: #0077b6; /* 배경색 */
+  padding: 10px 20px; /* 여백 */
+  position: sticky; /* 상단 고정 */
+  top: 0; /* 스크롤 시 위치 */
+  z-index: 1000; /* 다른 요소 위로 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 */
 }
 
 .navbar ul {
   list-style: none; /* 불릿 제거 */
   margin: 0;
   padding: 0;
-  display: flex; /* 가로로 나열 */
-  justify-content: center; /* 메뉴 가운데 정렬 */
+  display: flex; /* 가로 정렬 */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 세로 정렬 */
 }
 
 .navbar ul li {
-  margin: 0 15px; /* 메뉴 항목 간 간격 */
+  margin: 0 15px; /* 메뉴 간 간격 */
 }
 
 .navbar ul li a {
   text-decoration: none; /* 밑줄 제거 */
-  color: white; /* 링크 텍스트 색상 */
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: color 0.3s; /* 색상 전환 애니메이션 */
+  color: white; /* 텍스트 색상 */
+  font-weight: bold; /* 글자 굵게 */
+  font-size: 1.2rem; /* 글자 크기 */
+  transition: color 0.3s; /* 호버 효과 */
 }
 
 .navbar ul li a:hover {
-  color: #90e0ef; /* 호버 시 색상 변경 */
+  color: #90e0ef; /* 호버 시 색상 */
 }
 
 /* 헤더 스타일 */
