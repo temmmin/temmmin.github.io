@@ -1,0 +1,383 @@
+/* 전체 페이지 스타일 */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* 네비게이션 바 높이에 맞춘 여백 추가 */
+  background-color: #f4f4f9; /* 배경색 */
+  color: #333;
+}
+
+/* 네비게이션 바 스타일 추가 */
+.navbar {
+  background-color: #0077b6; /* 네비게이션 바 배경색 */
+  padding: 10px 20px; /* 내부 여백 */
+  position: fixed; /* 화면 상단 고정 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 전체 너비 */
+  z-index: 1000; /* 다른 요소보다 위에 표시 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 네비게이션 바 그림자 */
+}
+
+.navbar ul {
+  list-style: none; /* 불릿 제거 */
+  margin: 0;
+  padding: 0;
+  display: flex; /* 가로로 나열 */
+  justify-content: center; /* 메뉴 가운데 정렬 */
+}
+
+.navbar ul li {
+  margin: 0 15px; /* 메뉴 항목 간 간격 */
+}
+
+.navbar ul li a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: white; /* 링크 텍스트 색상 */
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s; /* 색상 전환 애니메이션 */
+}
+
+.navbar ul li a:hover {
+  color: #90e0ef; /* 호버 시 색상 변경 */
+}
+
+/* 헤더 스타일 */
+header {
+  text-align: center;
+  background-color: #0077b6; /* 헤더 배경색 */
+  color: white;
+  padding: 20px 10px;
+  border-bottom: 4px solid #005f8d; /* 헤더 하단 구분선 */
+}
+
+header img {
+  width: 180px; /* 프로필 사진 크기 조정 */
+  height: 220px;
+  border-radius: 50%; /* 원형 모양 */
+  margin-bottom: 10px;
+  border: 3px solid white; /* 사진 테두리 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+}
+
+header h1 {
+  font-size: 2.4rem; /* 제목 크기 */
+  margin: 10px 0;
+}
+
+header p {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+/* 섹션 제목 스타일 */
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 20px;
+  position: relative; /* 구분선을 위한 설정 */
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #0077b6;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* 섹션 스타일 */
+section {
+  margin: 40px auto; /* 위아래 간격 */
+  padding: 20px;
+  max-width: 900px; /* 섹션 최대 너비 */
+  background-color: #ffffff; /* 섹션 배경색 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 */
+}
+
+/* 학위 섹션 */
+section ul li {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center; /* 학위 텍스트 가운데 정렬 */
+}
+
+section ul li span {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* 연구 분야 섹션 */
+section ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+section ul li {
+  font-size: 1.2rem;
+  color: #0077b6;
+}
+
+section ul li a {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+section ul li a:hover {
+  color: #005f8d; /* 호버 색상 */
+  text-decoration: underline; /* 호버 시 밑줄 */
+}
+
+/* 간단 소개 섹션 */
+.intro {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 900px;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  border: 1px solid #bde4f5; /* 테두리 */
+}
+
+/* 스킬 섹션 */
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills img {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s; /* 아이콘 애니메이션 */
+}
+
+.skills img:hover {
+  transform: scale(1.1); /* 아이콘 확대 효과 */
+}
+
+.skills p {
+  margin-top: 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* 논문 하위 텍스트 스타일 */
+.sub-text {
+  color: gray;
+  font-size: 0.9rem;
+  font-style: italic;
+  display: block;
+  margin-top: 5px;
+}
+
+/* 섹션 간 간격 */
+section + section {
+  margin-top: 60px; /* 섹션 간격 */
+}
+
+/* 푸터 스타일 */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  border-top: 4px solid #005f8d; /* 상단 구분선 */
+}
+
+footer a {
+  color: #00b4d8;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #90e0ef;
+}
+
+/* 섹션 제목 스타일 */
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #01273b;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* Degree 섹션 스타일 */
+.degree-list {
+  list-style: none; /* 불릿 제거 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.degree-list li {
+  display: block; /* 각 항목을 블록 요소로 설정 */
+  margin-bottom: 20px; /* 각 항목 간격 추가 */
+  font-size: 1.2rem; /* 기본 텍스트 크기 */
+  line-height: 1.6; /* 줄 간격 */
+}
+
+.degree-list li strong {
+  font-size: 1.4rem; /* 학위 제목 크기 */
+  color: #333; /* 학위 제목 색상 */
+}
+
+.degree-list .sub-text {
+  color: rgb(0, 0, 0); /* 서브 텍스트 색상 */
+  font-size: 1rem; /* 서브 텍스트 크기 */
+  font-style: italic; /* 기울임체 */
+  display: block; /* 줄바꿈 */
+  margin-top: 5px; /* 제목과 간격 */
+}
+/* Career 리스트 스타일 */
+section ul {
+  list-style: none; /* 불릿 제거 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+section ul li {
+  display: block; /* 각 항목을 블록 요소로 설정하여 줄바꿈 강제 적용 */
+  margin-bottom: 20px; /* 항목 간 간격 추가 */
+  font-size: 1.2rem; /* 기본 텍스트 크기 */
+  line-height: 1.6; /* 줄 간격 */
+}
+
+section ul li strong {
+  font-size: 1.4rem; /* 직책 제목 크기 */
+  color: #333; /* 직책 제목 색상 */
+}
+
+section ul li .sub-text {
+  color: gray; /* 서브 텍스트 색상 */
+  font-size: 1rem; /* 서브 텍스트 크기 */
+  font-style: italic; /* 기울임체 */
+  display: block; /* 줄바꿈 */
+  margin-top: 5px; /* 제목과 서브 텍스트 간 간격 */
+}
+
+/* KCI Paper 리스트 스타일 */
+.kci-paper-list {
+  list-style: none; /* 불릿 제거 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.kci-paper-list li {
+  display: block; /* 각 항목을 블록 요소로 설정 */
+  margin-bottom: 20px; /* 항목 간 간격 */
+  font-size: 1.2rem; /* 기본 텍스트 크기 */
+  line-height: 1.6; /* 줄 간격 */
+}
+
+.kci-paper-list a {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: #0077b6; /* 링크 색상 */
+}
+
+.kci-paper-list a:hover {
+  color: #005f8d; /* 호버 색상 */
+}
+
+.kci-paper-list .sub-text {
+  color: gray; /* 서브 텍스트 색상 */
+  font-size: 0.9rem; /* 서브 텍스트 크기 */
+  font-style: italic; /* 기울임체 */
+  display: block; /* 줄바꿈 */
+  margin-top: 5px; /* 간격 추가 */
+}
+
+/* External Activities 리스트 스타일 */
+.external-activities-list {
+  list-style: none; /* 불릿 제거 */
+  padding: 0;
+  margin: 0 auto; /* 중앙 정렬 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  max-width: 1000px; /* 리스트 최대 너비 증가 */
+  width: 90%; /* 화면 크기에 따라 적응형 너비 */
+}
+
+.external-activities-list li {
+  background-color: #e4f6ff; /* 항목 배경색 */
+  border: 1px solid #e4f6ff; /* 항목 테두리 */
+  border-radius: 10px; /* 항목 둥근 모서리 */
+  padding: 15px; /* 내부 여백 */
+  margin-bottom: 20px; /* 항목 간 간격 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  transition: transform 0.3s, box-shadow 0.3s; /* 애니메이션 효과 */
+  width: 100%; /* 각 항목 너비를 리스트 너비에 맞춤 */
+  display: block; /* 블록 요소로 설정 */
+}
+
+.external-activities-list li:hover {
+  transform: translateY(-5px); /* 호버 시 살짝 떠오르는 효과 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 강조 */
+}
+
+.external-activities-list strong {
+  font-size: 1.4rem; /* 활동 제목 크기 */
+  color: #333; /* 제목 색상 */
+  font-weight: bold; /* 제목 굵게 */
+  display: block;
+  margin-bottom: 5px; /* 제목과 텍스트 간 간격 */
+}
+
+.external-activities-list a {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: #0077b6; /* 링크 색상 */
+  font-weight: bold; /* 링크 굵게 */
+}
+
+.external-activities-list a:hover {
+  color: #005f8d; /* 호버 시 링크 색상 변경 */
+}
+
+.external-activities-list .sub-text {
+  color: #000000; /* 서브 텍스트 색상 */
+  font-size: 1rem; /* 서브 텍스트 크기 */
+  font-style: italic; /* 기울임체 */
+  margin-top: 5px; /* 제목과 간격 */
+  display: block; /* 줄바꿈 */
+}
+
+/* 반응형 이미지 스타일 */
+.responsive-image {
+  width: 100%; /* 부모 요소의 너비에 맞게 조정 */
+  max-width: 800px; /* 최대 너비를 설정 (원본 크기를 초과하지 않도록) */
+  height: auto; /* 높이를 너비에 비례하여 자동 조정 */
+  display: block; /* 블록 요소로 설정 */
+  margin: 0 auto; /* 수평 중앙 정렬 */
+  border-radius: 10px; /* 선택적으로 둥근 모서리 추가 */
+}
