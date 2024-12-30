@@ -37,9 +37,9 @@
   <!-- 메인 콘텐츠 -->
   <main>
     <section>
-      <h2>연락처 정보</h2>
+      <h2>Contact Information</h2>
       <ul>
-        <li><strong>Email:</strong> <a href="mailto:dst05054@yu.ac.kr">dst05054@yu.ac.kr</a></li>
+        <li><strong>Email:</strong> <a href="mailto:kimtaemin1028@gmail.com">kimtaemin1028@gmail.com</a></li>
         <li><strong>GitHub:</strong> <a href="https://github.com/temmmin" target="_blank">temmmin</a></li>
         <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/temmmin" target="_blank">temmmin</a></li>
         <li><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Taemin-Kim-19" target="_blank">Taemin-Kim-19</a></li>
@@ -48,19 +48,45 @@
       </ul>
     </section>
 
-    <section>
-      <h2>문의하기</h2>
-      <form action="https://formspree.io/f/{your-form-id}" method="POST">
-        <label for="name">이름:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">이메일:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="message">메시지:</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-        <button type="submit">전송하기</button>
+    <section style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; padding: 20px; box-sizing: border-box;">
+      <h2 style="text-align: center; margin-bottom: 20px;">Contact Form</h2>
+      <form 
+            action="https://formspree.io/f/xqaalbyd" 
+            method="POST" 
+            style="width: 100%; max-width: 400px; background-color: #e0f7fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+        <!-- 이름 -->
+        <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+        <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+        
+        <!-- 이메일 -->
+        <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+        <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+        
+        <!-- 메시지 -->
+        <label for="message" style="display: block; margin-bottom: 5px;">message:</label>
+        <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              required 
+              style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></textarea>
+        
+        <!-- 전송 버튼 -->
+        <button 
+              type="submit" 
+              style="width: 100%; padding: 10px; background-color: #0077b6; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer;">
+          Send
+        </button>
       </form>
     </section>
   </main>
