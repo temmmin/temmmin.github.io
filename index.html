@@ -5,468 +5,393 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tae-Min Kim Portfolio</title>
 
+  <!-- 기본 메타 정보 -->
   <meta name="description" content="김태민의 포트폴리오 페이지 - 연구 분야, 스킬, 논문 및 프로젝트 소개">
   <meta name="keywords" content="김태민, 포트폴리오, 연구, 스킬, 논문, 프로젝트">
   <meta name="author" content="김태민">
 
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- Open Graph 메타 태그 (공유 썸네일) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tae-Min Kim Portfolio" />
+  <meta property="og:description" content="Welcome To My Portfolio!!" />
+  <meta property="og:image" content="/assets/images/main.jpg" />
+  <meta property="og:url" content="https://temmmin.github.io/" />
 
+  <!-- Twitter 메타 태그 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tae-Min Kim Portfolio" />
+  <meta name="twitter:description" content="Welcome To My Portfolio!!" />
+  <meta name="twitter:image" content="/assets/images/main.jpg" />
+
+  <!-- 브라우저 로고 (파비콘) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#4568f0" />
+
+  <!-- CSS 파일 -->
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    :root {
-      --bg-main: #f0f4f8;        
-      --card-bg: #ffffff;        
-      --text-dark: #111827;      
-      --text-normal: #374151;
-      --text-light: #6b7280;
-      /* 요청하신 깊은 남색 완벽 적용 */
-      --primary-navy: #142741;    
-      --primary-hover: #1e3a5f;
-      --line-color: #e5e7eb;
-    }
-
-    body {
-      font-family: 'Pretendard', sans-serif !important;
-      background-color: var(--bg-main) !important;
-      color: var(--text-normal) !important;
-      line-height: 1.7;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* 네비게이션 바 강제 남색 적용 (style.css 무시) */
-    nav.navbar {
-      background-color: var(--primary-navy) !important;
-      border-bottom: none !important;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-    }
-    nav.navbar ul li a {
-      color: rgba(255, 255, 255, 0.8) !important;
-      font-weight: 600 !important;
-      transition: color 0.2s;
-    }
-    nav.navbar ul li a:hover {
-      color: #ffffff !important;
-    }
-
-    .container {
-      display: block !important;
-      max-width: 900px !important;
-      margin: 0 auto !important;
-      padding: 40px 20px 80px !important;
-    }
-
-    /* 프로필 헤더 - 하얀 박스 버리고 남색 배너 폼으로 완전히 변경 */
-    header.profile-header {
-      display: block !important;
-      text-align: center;
-      background-color: var(--primary-navy) !important; /* 남색 배경 꽉 채움 */
-      color: #ffffff !important; /* 글씨는 흰색으로 변경 */
-      border-radius: 20px;
-      padding: 60px 20px !important;
-      margin-bottom: 40px !important;
-      box-shadow: 0 10px 30px rgba(20, 39, 65, 0.25) !important;
-    }
-    
-    header.profile-header img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      border: 4px solid #ffffff; /* 남색 배경에서 돋보이게 흰색 테두리 추가 */
-      margin-bottom: 25px;
-    }
-
-    header.profile-header h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #ffffff !important; 
-      margin: 0 0 10px 0;
-    }
-
-    header.profile-header p.intro-subtitle {
-      font-size: 1.15rem;
-      color: #ffffff  !important; /* 옅은 회백색으로 고급스럽게 */
-      margin: 5px 0 25px 0;
-      word-break: keep-all;
-    }
-
-    header.profile-header .research-badge {
-      display: inline-block;
-      background-color: rgba(255, 255, 255, 0.1) !important; /* 반투명 배경 */
-      color: #ffffff !important;
-      padding: 10px 24px;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border: 1px solid rgb(255, 255, 255) !important;
-      backdrop-filter: blur(4px);
-    }
-
-    /* 카드형 UI (나머지 내용들은 읽기 편하게 흰색 바탕 유지) */
-    section.card-section {
-      display: block !important;
-      width: 100% !important;
-      background-color: var(--card-bg) !important;
-      border-radius: 20px;
-      padding: 45px !important;
-      margin-bottom: 30px !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-      border: 1px solid rgba(0,0,0,0.02) !important;
-      box-sizing: border-box !important;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--primary-navy) !important; /* 섹션 제목을 남색으로 통일 */
-      margin-bottom: 25px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--line-color);
-    }
-
-    .intro-text p.desc-ko {
-      font-size: 1.05rem;
-      color: var(--text-dark) !important;
-      margin-bottom: 25px;
-      word-break: keep-all;
-    }
-    .intro-text p.desc-en {
-      font-size: 0.95rem;
-      color: var(--text-light) !important;
-    }
-
-    /* 스킬 박스 */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .skills-grid div {
-      background: var(--bg-main);
-      padding: 15px;
-      border-radius: 16px;
-      width: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 1px solid var(--line-color);
-    }
-    .skills-grid img {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 10px;
-    }
-    .skills-grid p {
-      margin: 0;
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--text-dark) !important;
-    }
-
-    /* 리스트 디자인 공통 */
-    .modern-list {
-      list-style: none !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 25px !important;
-    }
-    .modern-list li {
-      position: relative;
-      padding-left: 20px;
-      display: block !important;
-      width: 100% !important;
-    }
-    .modern-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background-color: var(--primary-navy); /* 총알 기호 남색 */
-    }
-    .modern-list strong {
-      display: block;
-      font-size: 1.1rem;
-      color: var(--text-dark) !important;
-      margin-bottom: 5px;
-    }
-    .modern-list .sub-text {
-      display: block;
-      font-size: 0.95rem;
-      color: var(--text-light) !important;
-      margin-bottom: 2px;
-    }
-    .modern-list a {
-      color: var(--primary-navy) !important;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .modern-list a:hover {
-      text-decoration: underline;
-      color: var(--primary-hover) !important;
-    }
-
-    /* 연락처 푸터 */
-    footer.contact-footer {
-      display: block !important;
-      text-align: center;
-      padding: 40px !important;
-      background-color: var(--card-bg) !important;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-      border: 1px solid rgba(0,0,0,0.02) !important;
-    }
-    footer.contact-footer p {
-      font-size: 1.05rem;
-      color: var(--text-dark) !important;
-      margin-bottom: 15px;
-    }
-    footer.contact-footer a {
-      color: var(--primary-navy) !important;
-      font-weight: 600;
-    }
-
-    @media (max-width: 768px) {
-      section.card-section { padding: 30px 20px !important; }
-      header.profile-header { padding: 40px 20px !important; }
-      .skills-grid { justify-content: center; }
-    }
-  </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="dfc.html">DFC</a></li>
-      <li><a href="occ.html">OCC</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<!-- 네비게이션 바 -->
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dfc.html">DFC</a></li>
+    <li><a href="occ.html">OCC</a></li>
+    <!-- <li><a href="#projects">Projects</a></li> -->
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-  <main class="container">
     
-    <header class="profile-header">
-      <img src="assets/photo.jpg" alt="Profile Photo">
-      <h1>김태민 (Tae-Min Kim)</h1>
-      <p class="intro-subtitle">데이터로 미래 모빌리티를 연결하는 지능형자동차부품진흥원 디지털플랫폼팀 김태민입니다.</p>
-      <div class="research-badge">
-        Research Area: Digital Image Processing, Computer Vision, In-Vehicle Networks (CAN)
+  <!-- 헤더 -->
+<header>
+    <img src="assets/photo.jpg" alt="Profile Photo">
+    <h1>김태민 (Tae-Min Kim)</h1>
+    <p>미래 모빌리티 데이터를 연결하는 지능형자동차부품진흥원 디지털플랫폼팀 김태민입니다.</p>
+    <p><strong>Research Area:</strong> Digital Image Processing, Computer Vision, In-Vehicle Networks (CAN)</p>
+  </header>
+
+  <!-- 간단 소개 섹션 -->
+  <section class="intro">
+    <p class="desc-ko">
+      현재 지능형자동차부품진흥원(KIAPI) 디지털플랫폼팀 주임 연구원으로 재직하고 있습니다. 
+      자율주행 실차 환경의 CAN 통신 데이터 수집, 역공학 분석, 그리고 실시간 모니터링 플랫폼 구축 업무를 담당하며 자율주행 기술 혁신의 기반을 다지고 있습니다. 
+      또한, 전자공학 석사 과정에서 디지털 영상 처리와 컴퓨터 비전을 활용한 DFC(Display Field Communication) 및 OCC(Optical Camera Communication) 연구를 수행한 경험을 바탕으로 모빌리티 데이터의 가치를 극대화하고자 합니다.
+    </p>
+    
+    <p class="desc-en">
+      Hello! I am an Assistant Researcher at the Digital Platform Team in KIAPI (Korea Intelligent Automotive Parts Promotion Institute). 
+      Currently, I am focusing on autonomous driving data, including CAN communication data acquisition, reverse engineering analysis, and developing real-time monitoring platforms. 
+      I hold a master’s degree in Electronic Engineering, with a strong research background in Display Field Communication (DFC) and Optical Camera Communication (OCC) using digital image processing and computer vision.
+    </p>
+  </section>
+
+  <!-- 연구 분야 섹션 -->
+  <section>
+    <h2>🔍 Research Area</h2>
+    <ul>
+      <li><a href="#">Computer Vision</a></li>
+      <li><a href="#">Digital Image Processing</a></li>
+      <li><a href="dfc.html">Display Field Communication</a></li>
+      <li><a href="#">Vehicular Communication</a></li>
+      <li><a href="#">Optical Camera Communication</a></li>
+    </ul>
+  </section>
+
+  <!-- 스킬 섹션 -->
+  <section>
+    <h2>⚒️ Skill</h2>
+    <div class="skills">
+      <div>
+        <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python">
+        <p>Python</p>
       </div>
-    </header>
-
-    <section class="card-section intro-text">
-      <h2 class="section-title">👋 About Me</h2>
-      <p class="desc-ko">
-        현재 지능형자동차부품진흥원(KIAPI) 디지털플랫폼팀 주임 연구원으로 재직하고 있습니다. 
-        자율주행 실차 환경의 CAN 통신 데이터 수집, 데이터 리버싱, 그리고 실시간 모니터링 플랫폼 구축 업무를 담당하며 자율주행 기술 혁신의 기반을 다지고 있습니다. 
-        또한, 전자공학 석사 과정에서 디지털 영상 처리와 컴퓨터 비전을 활용한 DFC(Display Field Communication) 및 OCC(Optical Camera Communication) 연구를 수행한 경험을 바탕으로 모빌리티 데이터의 가치를 극대화하고자 합니다.
-      </p>
-      <p class="desc-en">
-        Hello! I am an Assistant Researcher at the Digital Platform Team in KIAPI (Korea Intelligent Automotive Parts Promotion Institute). 
-        Currently, I am focusing on autonomous driving data, including CAN communication data acquisition, reverse engineering analysis, and developing real-time monitoring platforms. 
-        I hold a master’s degree in Electronic Engineering, with a strong research background in Display Field Communication (DFC) and Optical Camera Communication (OCC) using digital image processing and computer vision.
-      </p>
-    </section>
-
-    <section class="card-section">
-      <h2 class="section-title">⚒️ Skill</h2>
-      <div class="skills-grid">
-        <div>
-          <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python">
-          <p>Python</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/?size=100&id=bpip0gGiBLT1&format=png&color=000000" alt="OpenCV">
-          <p>OpenCV</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/color/96/000000/c-plus-plus-logo.png" alt="C++">
-          <p>C++</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/color/96/000000/android-studio--v2.png" alt="Android Studio">
-          <p>Android</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/?size=100&id=v6rX9QRN4DvW&format=png&color=000000" alt="MATLAB">
-          <p>MATLAB</p>
-        </div>
+      <div>
+        <img src="https://img.icons8.com/?size=100&id=bpip0gGiBLT1&format=png&color=000000" alt="OpenCV">
+        <p>OpenCV</p>
       </div>
-    </section>
+      <div>
+        <img src="https://img.icons8.com/color/96/000000/c-plus-plus-logo.png" alt="C++">
+        <p>C++</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/color/96/000000/android-studio--v2.png" alt="Android Studio">
+        <p>Android Studio</p>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/?size=100&id=v6rX9QRN4DvW&format=png&color=000000" alt="MATLAB">
+        <p>MATLAB</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="card-section">
-      <h2 class="section-title">🎓 Degree</h2>
-      <ul class="modern-list">
+  <section>
+    <h2>🎓 Degree</h2>
+    <ul class="degree-list">
+      <li>
+        <strong>B.S.</strong><br>
+        <span class="sub-text">Yeungnam University<br></span>
+        <span class="sub-text">Dept. of Electronic Engineering (2017.03 - 2023.02)</span>
+      </li>
+    </ul>
+
+    <ul class="degree-list">
+    <li>
+      <strong>M.S.</strong><br>
+      <span class="sub-text">Yeungnam University<br></span>
+      <span class="sub-text">Dept. of Electronic Engineering (2023.03 - 2025.02)</span>
+    </li>
+  </ul>
+  </section>
+
+
+  <section>
+    <h2>🏛 Career</h2>
+    <ul class="degree-list">
+      <li>
+        <strong>영남대 공업 기술 연구소</strong><br>
+        <span class="sub-text">연구원<br></span>
+        <span class="sub-text">2025.03 ~2025.12</span>
+      </li>
+    </ul>
+     <ul class="degree-list">
+      <li>
+        <strong>지능형자동차부품진흥원</strong><br>
+         <span class="sub-text">KIAPI(Korea Intelligent Automotive Parts Promotion Institute)<br></span>
+        <span class="sub-text">전략기획본부 혁신기술실<br></span>
+        <span class="sub-text">디지털플랫폼팀<br></span>
+        <span class="sub-text">주임 연구원<br></span>
+        <span class="sub-text">2026.01 ~ </span>
+      </li>
+    </ul>
+  </section>
+
+
+
+
+
+  <section>
+  <!-- 논문 섹션 -->
+  <section>
+    <h2>📝 SCI/SCIE Paper</h2>
+    <ul>
+      <li>
+        <a href="https://doi.org/10.1364/OE.515565">
+          Performance evaluation of data embedding schemes for two-dimensional Display Field Communication<br> </a>
+          <span class="sub-text"><strong>Tae-Min Kim</strong>, Pankaj Singh, Sung-Yoon Jung* (Optics Express: Impact Factor: 3.8, Optics:Q1, 2024)</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📝 International Conference Paper</h2>
+    <ul>
+      <li>
+        <a href="https://ieeexplore.ieee.org/document/10774043">
+          [Oral Session] Image Segmentation Using YOLOv8 for Display Field Communication (DFC)<br></a>
+          <span class="sub-text"><strong>Tae-Min Kim</strong>, Sung-Yoon Jung* (IEIE/IEEE International Conference on Consumer Electronics-Asia (ICCE-Asia), Danang, Vietnam, Nov. 2024)</span>
+      </li>
+    </ul>
+  </section>
+
+  
+    <section>
+      <h2>📝 KCI Paper</h2>
+      <ul class="kci-paper-list">
         <li>
-          <strong>M.S. in Electronic Engineering</strong>
-          <span class="sub-text">Yeungnam University</span>
-          <span class="sub-text">Dept. of Electronic Engineering (2023.03 - 2025.02)</span>
-        </li>
-        <li>
-          <strong>B.S. in Electronic Engineering</strong>
-          <span class="sub-text">Yeungnam University</span>
-          <span class="sub-text">Dept. of Electronic Engineering (2017.03 - 2023.02)</span>
+          <a href="https://doi.org/10.5573/ieie.2024.61.11.11">
+            가상환경에서 해상 풍력 발전기용 UAV를 위한 광 카메라 (OCC) 기술 연구<br>   </a>
+            <span class="sub-text"><strong>김태민</strong>, 김주현, 김유정, 김수진, 정성윤* (전자공학회논문지, 2024 11월호)</span>
         </li>
       </ul>
     </section>
 
-    <section class="card-section">
-      <h2 class="section-title">🏛 Career</h2>
-      <ul class="modern-list">
-        <li>
-          <strong>지능형자동차부품진흥원 (KIAPI)</strong>
-          <span class="sub-text">전략기획본부 혁신기술실 디지털플랫폼팀</span>
-          <span class="sub-text">주임 연구원 (2026.01 ~ )</span>
-        </li>
-        <li>
-          <strong>영남대 공업 기술 연구소</strong>
-          <span class="sub-text">연구원 (2025.03 ~ 2025.12)</span>
-        </li>
-      </ul>
-    </section>
+    
+    <section>
+    <h2>📝 Korea Conference Paper</h2>
+    <ul class="kci-paper-list">
+      <li>
+        <a href="https://dbpia.co.kr/journal/articleDetail?nodeId=NODE09346528">
+          [Poster Session] 보색관계를 이용한 color barcode 기술 실험<br>  </a>
+          <span class="sub-text">박언지,김유정,<strong>김태민</strong>,박주현 (한국통신학회 동계종합학술발표회, 2020.02)</span>
+      </li>
+      <li>
+        <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11227527">
+          [Poster Session] 해상 풍력 발전기 안전관리를 위한 UAV 활용 방안<br> </a>
+          <span class="sub-text">김민진,김유정,김수진,<strong>김태민</strong>,정성윤* (한국통신학회 동계종합학술발표회, 2023.02)</span>
+      </li>
+      <li>
+        <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522208">
+          [Poster Session] 2차원 디스플레이 기반 통신 (DFC)을 위한 데이터 임베딩 기법 연구<br> </a>
+          <span class="sub-text"><strong>김태민</strong>,이대규,정성윤* (대한전자공학회 하계학술대회, 2023.06)</span>
+      </li>
+      <li>
+        <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11737235">
+          [Poster Session] 풍력 발전기에서 UAV 를 이용한 광 카메라 통신(OCC) 가상 환경 연구<br></a>
+          <span class="sub-text"><strong>김태민</strong>,김주현,정성윤* (한국통신학회 동계종합학술발표회, 2024.02)</span>
+      </li>
+    </ul>
+  </section>
+ </section>
 
-    <section class="card-section">
-      <h2 class="section-title">📝 SCI/SCIE Paper</h2>
-      <ul class="modern-list">
-        <li>
-          <a href="https://doi.org/10.1364/OE.515565" target="_blank">Performance evaluation of data embedding schemes for two-dimensional Display Field Communication</a>
-          <span class="sub-text" style="margin-top: 5px;"><strong>Tae-Min Kim</strong>, Pankaj Singh, Sung-Yoon Jung* (Optics Express: Impact Factor: 3.8, Optics:Q1, 2024)</span>
-        </li>
-      </ul>
-    </section>
+  <section>
+    <h2>🌍 Activities</h2>
+    <ul class="external-activities-list">
+      <li>
+        <strong>학부 연구생 (Undergraduate Research Student)<br></strong>
+        <span class="sub-text">
+          <a href="https://sites.google.com/site/ubiqcomm/" target="_blank" style="color: #0077b6;">
+            <img src="https://img.icons8.com/color/16/000000/home-page.png" alt="홈페이지 아이콘" style="vertical-align: middle; margin-right: 5px;">
+            YU Ubiquitous Comm. Lab &ensp; &ensp;(2019.03 - 2020.02)</a> </span>
+          <span class="sub-text">
+            <a href="https://sites.google.com/site/ubiqcomm/" target="_blank" style="color: #0077b6;">
+              <img src="https://img.icons8.com/color/16/000000/home-page.png" alt="홈페이지 아이콘" style="vertical-align: middle; margin-right: 5px;">
+              YU Ubiquitous Comm. Lab &ensp; &ensp;(2022.03 - 2023.02) </a></span>
+      </li>
+    </ul>
 
-    <section class="card-section">
-      <h2 class="section-title">📝 International Conference Paper</h2>
-      <ul class="modern-list">
-        <li>
-          <a href="https://ieeexplore.ieee.org/document/10774043" target="_blank">[Oral Session] Image Segmentation Using YOLOv8 for Display Field Communication (DFC)</a>
-          <span class="sub-text" style="margin-top: 5px;"><strong>Tae-Min Kim</strong>, Sung-Yoon Jung* (IEIE/IEEE International Conference on Consumer Electronics-Asia (ICCE-Asia), Danang, Vietnam, Nov. 2024)</span>
-        </li>
-      </ul>
-    </section>
+    <ul class="external-activities-list">
+      <li>
+        <strong>석사 과정 연구생 (Master's Research Student)<br></strong>
+        <span class="sub-text">
+          <a href="https://sites.google.com/site/ubiqcomm/" target="_blank" style="color: #0077b6;">
+            <img src="https://img.icons8.com/color/16/000000/home-page.png" alt="홈페이지 아이콘" style="vertical-align: middle; margin-right: 5px;">
+            YU Ubiquitous Comm. Lab &ensp; &ensp;(2023.03 - 2025.12)</a> </span>
+      </li>
+    </ul>
 
-    <section class="card-section">
-      <h2 class="section-title">📝 KCI Paper</h2>
-      <ul class="modern-list">
-        <li>
-          <a href="https://doi.org/10.5573/ieie.2024.61.11.11" target="_blank">가상환경에서 해상 풍력 발전기용 UAV를 위한 광 카메라 (OCC) 기술 연구</a>
-          <span class="sub-text" style="margin-top: 5px;"><strong>김태민</strong>, 김주현, 김유정, 김수진, 정성윤* (전자공학회논문지, 2024 11월호)</span>
-        </li>
-      </ul>
-    </section>
+    <ul class="external-activities-list">
+      <li>
+        <strong>[산학협력 프로젝트] 디스플레이 기반 통신 원천 기술<br></strong>
+        <span class="sub-text">LINC 3.0 사업단 산학 공동 과제 개발<br></span>
+        <span class="sub-text"> 연구원 참여<br></span>
+        <span class="sub-text">(2023.06 - 2023.11)</span>
+      </li>
+    </ul>
 
-    <section class="card-section">
-      <h2 class="section-title">📝 Korea Conference Paper</h2>
-      <ul class="modern-list">
-        <li>
-          <a href="https://dbpia.co.kr/journal/articleDetail?nodeId=NODE09346528" target="_blank">[Poster Session] 보색관계를 이용한 color barcode 기술 실험</a>
-          <span class="sub-text" style="margin-top: 5px;">박언지, 김유정, <strong>김태민</strong>, 박주현 (한국통신학회 동계종합학술발표회, 2020.02)</span>
-        </li>
-        <li>
-          <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11227527" target="_blank">[Poster Session] 해상 풍력 발전기 안전관리를 위한 UAV 활용 방안</a>
-          <span class="sub-text" style="margin-top: 5px;">김민진, 김유정, 김수진, <strong>김태민</strong>, 정성윤* (한국통신학회 동계종합학술발표회, 2023.02)</span>
-        </li>
-        <li>
-          <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11522208" target="_blank">[Poster Session] 2차원 디스플레이 기반 통신 (DFC)을 위한 데이터 임베딩 기법 연구</a>
-          <span class="sub-text" style="margin-top: 5px;"><strong>김태민</strong>, 이대규, 정성윤* (대한전자공학회 하계학술대회, 2023.06)</span>
-        </li>
-        <li>
-          <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11737235" target="_blank">[Poster Session] 풍력 발전기에서 UAV 를 이용한 광 카메라 통신(OCC) 가상 환경 연구</a>
-          <span class="sub-text" style="margin-top: 5px;"><strong>김태민</strong>, 김주현, 정성윤* (한국통신학회 동계종합학술발표회, 2024.02)</span>
-        </li>
-      </ul>
-    </section>
+    <!-- <ul class="external-activities-list">
+      <li>
+        <strong>[현대 자동차 & 현대 NGV] V2X를 위한 광카메라통신 (V2X-OCC) 기술 트렌드 리포팅<br></strong>
+        <span class="sub-text">차량용 OCC 통신 기술 자료 조사/리포팅 자료 제작 담당 <br></span>
+        <span class="sub-text">(2024.09 - 2024.10)</span>
+      </li>
+    </ul> -->
 
-    <section class="card-section">
-      <h2 class="section-title">🌍 Activities</h2>
-      <ul class="modern-list">
-        <li>
-          <strong>학부 연구생 (Undergraduate Research Student)</strong>
-          <span class="sub-text"><a href="https://sites.google.com/site/ubiqcomm/" target="_blank">🔗 YU Ubiquitous Comm. Lab</a> (2019.03 - 2020.02)</span>
-          <span class="sub-text"><a href="https://sites.google.com/site/ubiqcomm/" target="_blank">🔗 YU Ubiquitous Comm. Lab</a> (2022.03 - 2023.02)</span>
-        </li>
-        <li>
-          <strong>석사 과정 연구생 (Master's Research Student)</strong>
-          <span class="sub-text"><a href="https://sites.google.com/site/ubiqcomm/" target="_blank">🔗 YU Ubiquitous Comm. Lab</a> (2023.03 - 2025.02)</span>
-        </li>
-        <li>
-          <strong>[산학협력 프로젝트] 디스플레이 기반 통신 원천 기술</strong>
-          <span class="sub-text">LINC 3.0 사업단 산학 공동 과제 개발 연구원 참여 (2023.06 - 2023.11)</span>
-        </li>
-        <li>
-          <strong>[예비 창업] 2024 경산 창업 네트워크 예비 창업팀(영남대)  <span style="color:var(--text-dark);">StegaVision</span></strong>
-          <span class="sub-text">DFC 디지털 신분증 기술 지원 팀원 참여 (2024.06 - 2024.12)</span>
-        </li>
-        <li>
-          <strong>[예비 창업] 2024 창업 유망주 300+(대경강원권)  <span style="color:var(--text-dark);">미스틱링크</span></strong>
-          <span class="sub-text"><a href="http://festival.u300.kr/cms/process/invest/2024/view_2024.asp?c_show_no=71&c_check_no=64&c_relation=809&c_relation2=903&c_team_no=6802&c_festival_type=7&s_text=%EB%AF%B8%EC%8A%A4%ED%8B%B1#none" target="_blank">🔗 가상 IPO 기업 공개</a> (교육부, 한국연구재단(NRF) 주관)</span>
-          <span class="sub-text">디스플레이-카메라 간 무선 통신을 이용한 디지털 신분증 기술 지원 팀원 참여 (2024.07 - 2024.10)</span>
-        </li>
-        <li>
-          <strong>[예비 창업] 2024 YUnicorn ESG창업경진대회  <span style="color:var(--text-dark);">StegaVision</span></strong>
-          <span class="sub-text">DFC 디지털 신분결제 시스템 창업 아디이어/IR 자료 담당 (2024.07 - 2024.08)</span>
-        </li>
-        <li>
-          <strong>[예비 창업] 2024 G-Star Pitchday 3차 예선 및 본선  <span style="color:var(--text-dark);">미스틱링크</span></strong>
-          <span class="sub-text">경북창조경제혁신센터 주관 / 디스플레이-카메라 간 무선 통신을 이용한 디지털 신분증</span>
-          <span class="sub-text">창업 아디이어/IR 자료 담당 (3차 예선: 2024.08.23, 본선:2024.09.10)</span>
-        </li>
-        <li>
-          <strong>[예비 창업] 2024 G-Star Pitchday Boost-Up 캠프 본선 (24팀)  <span style="color:var(--text-dark);">미스틱링크</span></strong>
-          <span class="sub-text">대구창조경제혁신센터, 경북창조경제혁신센터 공동 주관</span>
-          <span class="sub-text">창업 아디이어/IR 자료 담당 (2024.09.04)</span>
-        </li>
-        <li>
-          <strong>[공모전 & 창업 아이템] 2024 코드게이트 글로벌 AI 아이디어랩 공모전 본선(10팀)  <span style="color:var(--text-dark);">미스틱링크</span></strong>
-          <span class="sub-text">코드게이트 주관 / AI 기술로 보안성을 강화한 디지털 히든 워터마킹</span>
-          <span class="sub-text">창업 아디이어/본선 발표 (2024.08.29)</span>
-        </li>
-        <li>
-          <strong>[공모전 AI 아이디어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전 본선  <span style="color:var(--text-dark);">미스틱링크</span></strong>
-          <span class="sub-text">경북 문화 재단 콘텐츠 진흥원 / AI 기술을 활용한 디지털 사이니지</span>
-          <span class="sub-text">아디이어/본선 발표 (2024.08)</span>
-        </li>
-      </ul>
-    </section>
+    <ul class="external-activities-list">
+      <li>
+        <strong>[예비 창업] 2024 경산 창업 네트워크 예비 창업팀(영남대)<br></strong>
+        <strong style="color: #02131d;">StegaVision<br></strong>
+        <span class="sub-text">DFC 디지털 신분증<br></span>
+        <span class="sub-text"> 기술 지원 팀원 참여<br></span>
+        <span class="sub-text">(2024.06 - 2024.12)</span>
+      </li>
+    </ul>
 
-    <section class="card-section">
-      <h2 class="section-title">🏆 Awards</h2>
-      <ul class="modern-list">
-        <li>
-          <strong>[산학협력 프로젝트] 2023년 대경권 우수 성과 공유 워크숍-대학원생 논문 발표 경진대회 <span style="color: var(--primary-navy);">(우수상)</span></strong>
-          <span class="sub-text">수신단 S/W 담당 연구원 참여 (2024.01.22)</span>
-        </li>
-        <li>
-          <strong>[IR 피칭] 2024 YUnicorn ESG 창업경진대회 <span style="color: var(--primary-navy);">(대상)</span>  <span style="color:var(--text-dark);">StegaVision</span></strong>
-          <span class="sub-text">창업 아이디어/IR 자료 담당 (2024.07 - 2024.08)</span>
-        </li>
-        <li>
-          <strong>[IR 피칭] 2024 G-Star Pitchday <span style="color: var(--primary-navy);">(3차 예선 장려상 & 본선 진출)</span> <span style="color:var(--text-dark);">미스틱링크</span></strong>
-          <span class="sub-text">창업 아디이어/IR 자료 담당 (3차 예선: 2024.08.23, 본선:2024.09.10)</span>
-        </li>
-        <li>
-          <strong>[공모전 AI 아이디어어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전 <span style="color: var(--primary-navy);">(장려상)</span>  <span style="color:var(--text-dark);">미스틱링크</span></strong>
-          <span class="sub-text">아디이어/IR 자료 담당 (수상:2024.11.11)</span>
-        </li>
-      </ul>
-    </section>
+    <ul class="external-activities-list">
+      <li>
+        <strong>[예비 창업] 2024 창업 유망주 300+(대경강원권)</strong>
+        <strong style="color: #02131d;">미스틱링크<br></strong>
+        <a href="http://festival.u300.kr/cms/process/invest/2024/view_2024.asp?c_show_no=71&c_check_no=64&c_relation=809&c_relation2=903&c_team_no=6802&c_festival_type=7&s_text=%EB%AF%B8%EC%8A%A4%ED%8B%B1#none"> 
+          <strong style="color: #0077b6;">가상 IPO 기업 공개<br></strong></a>
+          <span class="sub-text">교육부, 한국연구재단(NRF) 주관 <br></span>
+        <span class="sub-text">디스플레이-카메라 간 무선 통신을 이용한 디지털 신분증<br></span>
+        <span class="sub-text">기술 지원 팀원 참여 (2024.07 - 2024.10)</span>
+      </li>
+    </ul>
 
-    <footer class="contact-footer">
-      <h2 class="section-title" style="justify-content: center; border-bottom: none; margin-bottom: 10px;">Contact</h2>
-      <p>Email: <a href="mailto:kimtaemin1028@gmail.com">kimtaemin1028@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/temmmin" target="_blank">github.com/temmmin</a></p>
-      <p>ResearchGate: <a href="https://www.researchgate.net/profile/Taemin-Kim-19" target="_blank">Taemin-Kim-19</a></p>
-    </footer>
+    <ul class="external-activities-list">
+      <li>
+        <strong>[예비 창업] 2024 YUnicorn ESG창업경진대회<br></strong>
+        <strong style="color: #02131d;">StegaVision<br></strong>
+        <span class="sub-text">DFC 디지털 신분결제 시스템<br></span>
+        <span class="sub-text">창업 아디이어/IR 자료 담당<br></span>
+        <span class="sub-text">(2024.07 - 2024.08)<br></span>
+      </li>
+    </ul>
 
-  </main>
+    <ul class="external-activities-list">
+      <li>
+        <strong>[예비 창업] 2024 G-Star Pitchday 3차 예선 및 본선<br></strong>
+        <strong style="color: #02131d;">미스틱링크<br></strong>
+        <span class="sub-text">경북창조경제혁신센터 주관<br></span>
+        <span class="sub-text">디스플레이-카메라 간 무선 통신을 이용한 디지털 신분증<br></span>
+        <span class="sub-text">창업 아디이어/IR 자료 담당<br></span>
+        <span class="sub-text">(3차 예선: 2024.08.23, 본선:2024.09.10)<br></span>
+      </li>
+    </ul>
+
+    <ul class="external-activities-list">
+      <li>
+        <strong>[예비 창업] 2024 G-Star Pitchday Boost-Up 캠프 본선 (24팀)<br></strong>
+        <strong style="color: #02131d;">미스틱링크<br></strong>
+        <span class="sub-text">대구창조경제혁신센터, 경북창조경제혁신센터 공동 주관<br> </span>
+        <span class="sub-text">디스플레이-카메라 간 무선 통신을 이용한 디지털 신분증<br></span>
+        <span class="sub-text">창업 아디이어/IR 자료 담당<br></span>
+        <span class="sub-text">(2024.09.04)<br></span>
+      </li>
+    </ul>
+ 
+    <ul class="external-activities-list">
+      <li>
+        <strong>[공모전 & 창업 아이템] 2024 코드게이트 글로벌 AI 아이디어랩 공모전<br></strong>
+        <strong>본선(10팀)<br></strong>
+        <strong style="color: #02131d;">미스틱링크<br></strong>
+        <span class="sub-text">코드게이트 주관<br></span>
+        <span class="sub-text">AI 기술로 보안성을 강화한 디지털 히든 워터마킹<br></span>
+        <span class="sub-text">창업 아디이어/본선 발표<br></span>
+        <span class="sub-text">(2024.08.29)<br></span>
+      </li>
+    </ul>
+
+    <ul class="external-activities-list">
+      <li>
+        <strong>[공모전 AI 아이디어어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전<br></strong>
+        <strong>본선<br></strong>
+        <strong style="color: #02131d;">미스틱링크<br></strong>
+        <span class="sub-text">경북 문화 재단 콘텐츠 진흥원원<br></span>
+        <span class="sub-text">AI 기술을 활용한 디지털 사이니지<br></span>
+        <span class="sub-text">아디이어/본선 발표<br></span>
+        <span class="sub-text">(2024.08)<br></span>
+      </li>
+    </ul>
+
+
+  </section>
+
+
+ <section>
+  <h2>🏆 Awards</h2>
+   <ul class="external-activities-list">
+      <li>
+        <strong>[산학협력 프로젝트] 2023년 대경권 우수 성과 공유 워크숍-대학원생 논문 발표 경진대회 </strong>
+        <strong style="color: #065685;">우수상<br></strong>
+        <strong style="color: #02131d;"><br></strong>
+        <span class="sub-text">수신단 S/W 담당<br></span>
+        <span class="sub-text">연구원 참여(2024.01.22)<br></span>
+      </li>
+    </ul>
+
+    <ul class="external-activities-list">
+      <li>
+        <strong>[IR 피칭] 2024 YUnicorn ESG 창업경진대회 </strong>
+        <strong style="color: #065685;">대상<br></strong>
+        <strong style="color: #02131d;">StegaVision<br></strong>
+        <span class="sub-text">창업 아이디어/IR 자료 담당 (2024.07 - 2024.08)<br></span>
+      </li>
+    </ul>
+
+    <ul class="external-activities-list">
+      <li>
+        <strong>[IR 피칭] 2024 G-Star Pitchday 3차 예선</strong>
+        <strong style="color: #065685;">3차 예선 장려상 & 본선 진출<br></strong>
+        <strong style="color: #02131d;">미스틱링크<br></strong>
+        <span class="sub-text">창업 아디이어/IR 자료 담당<br></span>
+        <span class="sub-text">(3차 예선: 2024.08.23, 본선:2024.09.10)<br></span>
+      </li>
+    </ul>
+
+    <ul class="external-activities-list">
+      <li>
+        <strong>[공모전 AI 아이디어어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전</strong>
+        <strong style="color: #065685;">장려상 <br></strong>
+        <strong style="color: #02131d;">미스틱링크<br></strong>
+        <span class="sub-text">아디이어/IR 자료 담당<br></span>
+        <span class="sub-text">(수상:2024.11.11)<br></span>
+      </li>
+    </ul>
+  </section>
+
+
+  <!-- 연락처 -->
+  <footer>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:kimtaemin1028@gmail.com">kimtaemin1028@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/temmmin">https://github.com/temmmin</a></p>
+    <p>ResearchGate: <a href="https://www.researchgate.net/profile/Taemin-Kim-19">https://www.researchgate.net/profile/Taemin-Kim-19</a></p>
+  </footer>
 </body>
 </html>
