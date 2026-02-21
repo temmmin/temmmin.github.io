@@ -4,96 +4,271 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Tae-Min Kim Portfolio</title>
-  <link rel="stylesheet" href="style.css">
 
-
-  
-  <!-- 브라우저 로고 (파비콘) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
   <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#4568f0" />
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg-main: #f0f4f8;        
+      --card-bg: #ffffff;        
+      --text-dark: #111827;      
+      --text-normal: #374151;
+      --text-light: #6b7280;
+      --primary-navy: #142741;    
+      --primary-hover: #1e3a5f;
+      --line-color: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif !important;
+      background-color: var(--bg-main) !important;
+      color: var(--text-normal) !important;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 네비게이션 바 강제 남색 적용 */
+    nav.navbar {
+      background-color: var(--primary-navy) !important;
+      border-bottom: none !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+      margin: 0;
+      padding: 15px 0;
+    }
+    nav.navbar ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    nav.navbar ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    nav.navbar ul li a {
+      color: rgba(255, 255, 255, 0.8) !important;
+      font-weight: 600 !important;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav.navbar ul li a:hover {
+      color: #ffffff !important;
+    }
+
+    .container {
+      display: block !important;
+      max-width: 900px !important;
+      margin: 0 auto !important;
+      padding: 40px 20px 80px !important;
+    }
+
+    /* 서브 페이지 헤더 (남색 배너) */
+    header.page-header {
+      display: block !important;
+      text-align: center;
+      background-color: var(--primary-navy) !important;
+      color: #ffffff !important;
+      border-radius: 20px;
+      padding: 60px 20px !important;
+      margin-bottom: 40px !important;
+      box-shadow: 0 10px 30px rgba(20, 39, 65, 0.25) !important;
+    }
+
+    header.page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff !important;
+      margin: 0;
+    }
+
+    /* 카드형 UI */
+    section.card-section {
+      display: block !important;
+      width: 100% !important;
+      background-color: var(--card-bg) !important;
+      border-radius: 20px;
+      padding: 45px !important;
+      margin-bottom: 30px !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+      border: 1px solid rgba(0,0,0,0.02) !important;
+      box-sizing: border-box !important;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy) !important; 
+      margin-top: 0;
+      margin-bottom: 25px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--line-color);
+      text-align: left;
+    }
+
+    /* 연락처 리스트 디자인 */
+    .modern-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+    }
+    .modern-list li {
+      position: relative;
+      padding-left: 20px;
+      display: block !important;
+      font-size: 1.1rem;
+      color: var(--text-dark) !important;
+    }
+    .modern-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--primary-navy);
+    }
+    .modern-list a {
+      color: var(--primary-navy) !important;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 5px;
+      transition: color 0.2s;
+    }
+    .modern-list a:hover {
+      color: var(--primary-hover) !important;
+      text-decoration: underline;
+    }
+
+    /* 이메일 폼 디자인 (트렌디하게 개편) */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+      border: 1px solid var(--line-color);
+      border-radius: 12px;
+      box-sizing: border-box;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 1rem;
+      color: var(--text-dark);
+      background-color: #f8fafc;
+      transition: all 0.2s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary-navy);
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(20, 39, 65, 0.1); /* 포커스 시 부드러운 남색 테두리 효과 */
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 16px;
+      background-color: var(--primary-navy);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .contact-form button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* 푸터 */
+    footer.contact-footer {
+      display: block !important;
+      text-align: center;
+      padding: 30px !important;
+      background-color: transparent !important; /* 마지막 푸터는 배경색 없이 깔끔하게 */
+      color: var(--text-light) !important;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      section.card-section { padding: 30px 20px !important; }
+      header.page-header { padding: 40px 20px !important; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- 네비게이션 바 -->
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="dfc.html">DFC</a></li>
-    <li><a href="occ.html">OCC</a></li>
-    <!-- <li><a href="#projects">Projects</a></li> -->
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dfc.html">DFC</a></li>
+      <li><a href="occ.html">OCC</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-
-  <!-- 헤더 -->
-  <header>
-    <h1>Contact</h1>
-  </header>
+  <main class="container">
+    
+    <header class="page-header">
+      <h1>Contact</h1>
+    </header>
   
-  <!-- 메인 콘텐츠 -->
-  <main>
-    <section>
-      <h2>Contact Information</h2>
-      <ul>
+    <section class="card-section">
+      <h2 class="section-title">📬 Contact Information</h2>
+      <ul class="modern-list">
         <li><strong>Email:</strong> <a href="mailto:kimtaemin1028@gmail.com">kimtaemin1028@gmail.com</a></li>
         <li><strong>GitHub:</strong> <a href="https://github.com/temmmin" target="_blank">temmmin</a></li>
         <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/temmmin" target="_blank">temmmin</a></li>
         <li><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Taemin-Kim-19" target="_blank">Taemin-Kim-19</a></li>
-
-
       </ul>
     </section>
 
-    <section style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; padding: 20px; box-sizing: border-box;">
-      <h2 style="text-align: center; margin-bottom: 20px;">Contact Form</h2>
-      <form 
-            action="https://formspree.io/f/xqaalbyd" 
-            method="POST" 
-            style="width: 100%; max-width: 400px; background-color: #e0f7fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
-        <!-- 이름 -->
-        <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
-        <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              required 
-              style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
-        
-        <!-- 이메일 -->
-        <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
-        <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required 
-              style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
-        
-        <!-- 메시지 -->
-        <label for="message" style="display: block; margin-bottom: 5px;">message:</label>
-        <textarea 
-              id="message" 
-              name="message" 
-              rows="5" 
-              required 
-              style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></textarea>
-        
-        <!-- 전송 버튼 -->
-        <button 
-              type="submit" 
-              style="width: 100%; padding: 10px; background-color: #0077b6; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer;">
-          Send
-        </button>
-      </form>
+    <section class="card-section">
+      <h2 class="section-title" style="text-align: center; border-bottom: none;">Send Me a Message</h2>
+      
+      <div class="contact-form">
+        <form action="https://formspree.io/f/xqaalbyd" method="POST">
+          
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="이름을 입력해 주세요" required>
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="답변 받으실 이메일 주소를 입력해 주세요" required>
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="메시지 내용을 입력해 주세요" required></textarea>
+          
+          <button type="submit">메시지 보내기</button>
+        </form>
+      </div>
     </section>
+
   </main>
 
-  <!-- 푸터 -->
-  <footer>
+  <footer class="contact-footer">
     <p>&copy; 2024 Tae-Min Kim Portfolio. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
