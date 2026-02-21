@@ -9,24 +9,20 @@
   <meta name="keywords" content="김태민, 포트폴리오, 연구, 스킬, 논문, 프로젝트">
   <meta name="author" content="김태민">
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tae-Min Kim Portfolio" />
-  <meta property="og:description" content="Welcome To My Portfolio!!" />
-  <meta property="og:image" content="/assets/images/main.jpg" />
-  <meta property="og:url" content="https://temmmin.github.io/" />
-
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
   <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
-      --bg-main: #f4f7fb;        
+      --bg-main: #f0f4f8;        
       --card-bg: #ffffff;        
-      --text-dark: #111827;      /* 가독성을 위해 훨씬 진한 검은색으로 변경 */
+      --text-dark: #111827;      
       --text-normal: #374151;
       --text-light: #6b7280;
-      --point-color: #0284c7;    
+      /* 요청하신 깊은 남색 완벽 적용 */
+      --primary-navy: #142741;    
+      --primary-hover: #1e3a5f;
       --line-color: #e5e7eb;
     }
 
@@ -39,7 +35,21 @@
       padding: 0;
     }
 
-    /* 전체 레이아웃 (옆으로 퍼지지 않게 강제 블록 처리) */
+    /* 네비게이션 바 강제 남색 적용 (style.css 무시) */
+    nav.navbar {
+      background-color: var(--primary-navy) !important;
+      border-bottom: none !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    }
+    nav.navbar ul li a {
+      color: rgba(255, 255, 255, 0.8) !important;
+      font-weight: 600 !important;
+      transition: color 0.2s;
+    }
+    nav.navbar ul li a:hover {
+      color: #ffffff !important;
+    }
+
     .container {
       display: block !important;
       max-width: 900px !important;
@@ -47,7 +57,55 @@
       padding: 40px 20px 80px !important;
     }
 
-    /* 카드형 UI (무조건 세로로 쌓이도록 설정) */
+    /* 프로필 헤더 - 하얀 박스 버리고 남색 배너 폼으로 완전히 변경 */
+    header.profile-header {
+      display: block !important;
+      text-align: center;
+      background-color: var(--primary-navy) !important; /* 남색 배경 꽉 채움 */
+      color: #ffffff !important; /* 글씨는 흰색으로 변경 */
+      border-radius: 20px;
+      padding: 60px 20px !important;
+      margin-bottom: 40px !important;
+      box-shadow: 0 10px 30px rgba(20, 39, 65, 0.25) !important;
+    }
+    
+    header.profile-header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      border: 4px solid #ffffff; /* 남색 배경에서 돋보이게 흰색 테두리 추가 */
+      margin-bottom: 25px;
+    }
+
+    header.profile-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff !important; 
+      margin: 0 0 10px 0;
+    }
+
+    header.profile-header p.intro-subtitle {
+      font-size: 1.15rem;
+      color: #ffffff  !important; /* 옅은 회백색으로 고급스럽게 */
+      margin: 5px 0 25px 0;
+      word-break: keep-all;
+    }
+
+    header.profile-header .research-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.1) !important; /* 반투명 배경 */
+      color: #ffffff !important;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1px solid rgb(255, 255, 255) !important;
+      backdrop-filter: blur(4px);
+    }
+
+    /* 카드형 UI (나머지 내용들은 읽기 편하게 흰색 바탕 유지) */
     section.card-section {
       display: block !important;
       width: 100% !important;
@@ -55,7 +113,7 @@
       border-radius: 20px;
       padding: 45px !important;
       margin-bottom: 30px !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
       border: 1px solid rgba(0,0,0,0.02) !important;
       box-sizing: border-box !important;
     }
@@ -63,59 +121,12 @@
     .section-title {
       font-size: 1.5rem;
       font-weight: 800;
-      color: var(--text-dark) !important;
+      color: var(--primary-navy) !important; /* 섹션 제목을 남색으로 통일 */
       margin-bottom: 25px;
       padding-bottom: 12px;
       border-bottom: 2px solid var(--line-color);
     }
 
-    /* 헤더 (프로필) 영역 - 파란 배경 충돌 해결 */
-    header.profile-header {
-      display: block !important;
-      text-align: center;
-      background-color: var(--card-bg) !important;
-      border-radius: 20px;
-      padding: 50px 20px !important;
-      margin-bottom: 30px !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
-    }
-    
-    header.profile-header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      border: 3px solid #fff;
-      margin-bottom: 25px;
-    }
-
-    header.profile-header h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--text-dark) !important;
-      margin: 0 0 10px 0;
-    }
-
-    header.profile-header p.intro-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-normal) !important;
-      margin: 5px 0 20px 0;
-      word-break: keep-all;
-    }
-
-    header.profile-header .research-badge {
-      display: inline-block;
-      background-color: #f0f9ff !important;
-      color: #0369a1 !important;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border: 1px solid #bae6fd;
-    }
-
-    /* 간단 소개 텍스트 */
     .intro-text p.desc-ko {
       font-size: 1.05rem;
       color: var(--text-dark) !important;
@@ -127,7 +138,7 @@
       color: var(--text-light) !important;
     }
 
-    /* 스킬 섹션 */
+    /* 스킬 박스 */
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
@@ -141,6 +152,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 1px solid var(--line-color);
     }
     .skills-grid img {
       width: 48px;
@@ -154,14 +166,14 @@
       color: var(--text-dark) !important;
     }
 
-    /* 리스트 디자인 공통 (선호하셨던 깔끔한 디자인) */
+    /* 리스트 디자인 공통 */
     .modern-list {
       list-style: none !important;
       padding: 0 !important;
       margin: 0 !important;
       display: flex !important;
-      flex-direction: column !important; /* 강제로 세로 정렬 */
-      gap: 25px !important; /* 각 항목 간의 여백 */
+      flex-direction: column !important;
+      gap: 25px !important;
     }
     .modern-list li {
       position: relative;
@@ -177,7 +189,7 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background-color: var(--point-color);
+      background-color: var(--primary-navy); /* 총알 기호 남색 */
     }
     .modern-list strong {
       display: block;
@@ -192,22 +204,25 @@
       margin-bottom: 2px;
     }
     .modern-list a {
-      color: var(--point-color) !important;
+      color: var(--primary-navy) !important;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.2s;
     }
     .modern-list a:hover {
       text-decoration: underline;
+      color: var(--primary-hover) !important;
     }
 
-    /* 푸터 - 연락처 가독성 높임 */
+    /* 연락처 푸터 */
     footer.contact-footer {
       display: block !important;
       text-align: center;
       padding: 40px !important;
       background-color: var(--card-bg) !important;
       border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+      border: 1px solid rgba(0,0,0,0.02) !important;
     }
     footer.contact-footer p {
       font-size: 1.05rem;
@@ -215,7 +230,7 @@
       margin-bottom: 15px;
     }
     footer.contact-footer a {
-      color: #0284c7 !important; /* 클릭할 수 있게 진한 파란색 고정 */
+      color: var(--primary-navy) !important;
       font-weight: 600;
     }
 
@@ -242,7 +257,7 @@
     <header class="profile-header">
       <img src="assets/photo.jpg" alt="Profile Photo">
       <h1>김태민 (Tae-Min Kim)</h1>
-      <p class="intro-subtitle">미래 모빌리티의 데이터 혁신을 이끄는 지능형자동차부품진흥원 디지털플랫폼팀 김태민입니다.</p>
+      <p class="intro-subtitle">데이터로 미래 모빌리티를 연결하는 지능형자동차부품진흥원 디지털플랫폼팀 김태민입니다.</p>
       <div class="research-badge">
         Research Area: Digital Image Processing, Computer Vision, In-Vehicle Networks (CAN)
       </div>
@@ -256,7 +271,7 @@
         또한, 전자공학 석사 과정에서 디지털 영상 처리와 컴퓨터 비전을 활용한 DFC(Display Field Communication) 및 OCC(Optical Camera Communication) 연구를 수행한 경험을 바탕으로 모빌리티 데이터의 가치를 극대화하고자 합니다.
       </p>
       <p class="desc-en">
-        Hello! I am an Associate Research Engineer at the Digital Platform Team in KIAPI (Korea Intelligent Automotive Parts Promotion Institute). 
+        Hello! I am an Assistant Researcher at the Digital Platform Team in KIAPI (Korea Intelligent Automotive Parts Promotion Institute). 
         Currently, I am focusing on autonomous driving data, including CAN communication data acquisition, reverse engineering analysis, and developing real-time monitoring platforms. 
         I hold a master’s degree in Electronic Engineering, with a strong research background in Display Field Communication (DFC) and Optical Camera Communication (OCC) using digital image processing and computer vision.
       </p>
@@ -381,42 +396,42 @@
         </li>
         <li>
           <strong>석사 과정 연구생 (Master's Research Student)</strong>
-          <span class="sub-text"><a href="https://sites.google.com/site/ubiqcomm/" target="_blank">🔗 YU Ubiquitous Comm. Lab</a> (2023.03 - 2025.12)</span>
+          <span class="sub-text"><a href="https://sites.google.com/site/ubiqcomm/" target="_blank">🔗 YU Ubiquitous Comm. Lab</a> (2023.03 - 2025.02)</span>
         </li>
         <li>
           <strong>[산학협력 프로젝트] 디스플레이 기반 통신 원천 기술</strong>
           <span class="sub-text">LINC 3.0 사업단 산학 공동 과제 개발 연구원 참여 (2023.06 - 2023.11)</span>
         </li>
         <li>
-          <strong>[예비 창업] 2024 경산 창업 네트워크 예비 창업팀(영남대) <span style="color:#0f172a;">StegaVision</span></strong>
+          <strong>[예비 창업] 2024 경산 창업 네트워크 예비 창업팀(영남대)  <span style="color:var(--text-dark);">StegaVision</span></strong>
           <span class="sub-text">DFC 디지털 신분증 기술 지원 팀원 참여 (2024.06 - 2024.12)</span>
         </li>
         <li>
-          <strong>[예비 창업] 2024 창업 유망주 300+(대경강원권)  <span style="color:#0f172a;">미스틱링크</span></strong>
+          <strong>[예비 창업] 2024 창업 유망주 300+(대경강원권)  <span style="color:var(--text-dark);">미스틱링크</span></strong>
           <span class="sub-text"><a href="http://festival.u300.kr/cms/process/invest/2024/view_2024.asp?c_show_no=71&c_check_no=64&c_relation=809&c_relation2=903&c_team_no=6802&c_festival_type=7&s_text=%EB%AF%B8%EC%8A%A4%ED%8B%B1#none" target="_blank">🔗 가상 IPO 기업 공개</a> (교육부, 한국연구재단(NRF) 주관)</span>
           <span class="sub-text">디스플레이-카메라 간 무선 통신을 이용한 디지털 신분증 기술 지원 팀원 참여 (2024.07 - 2024.10)</span>
         </li>
         <li>
-          <strong>[예비 창업] 2024 YUnicorn ESG창업경진대회 <span style="color:#0f172a;">StegaVision</span></strong>
+          <strong>[예비 창업] 2024 YUnicorn ESG창업경진대회  <span style="color:var(--text-dark);">StegaVision</span></strong>
           <span class="sub-text">DFC 디지털 신분결제 시스템 창업 아디이어/IR 자료 담당 (2024.07 - 2024.08)</span>
         </li>
         <li>
-          <strong>[예비 창업] 2024 G-Star Pitchday 3차 예선 및 본선  <span style="color:#0f172a;">미스틱링크</span></strong>
+          <strong>[예비 창업] 2024 G-Star Pitchday 3차 예선 및 본선  <span style="color:var(--text-dark);">미스틱링크</span></strong>
           <span class="sub-text">경북창조경제혁신센터 주관 / 디스플레이-카메라 간 무선 통신을 이용한 디지털 신분증</span>
           <span class="sub-text">창업 아디이어/IR 자료 담당 (3차 예선: 2024.08.23, 본선:2024.09.10)</span>
         </li>
         <li>
-          <strong>[예비 창업] 2024 G-Star Pitchday Boost-Up 캠프 본선 (24팀)  <span style="color:#0f172a;">미스틱링크</span></strong>
+          <strong>[예비 창업] 2024 G-Star Pitchday Boost-Up 캠프 본선 (24팀)  <span style="color:var(--text-dark);">미스틱링크</span></strong>
           <span class="sub-text">대구창조경제혁신센터, 경북창조경제혁신센터 공동 주관</span>
           <span class="sub-text">창업 아디이어/IR 자료 담당 (2024.09.04)</span>
         </li>
         <li>
-          <strong>[공모전 & 창업 아이템] 2024 코드게이트 글로벌 AI 아이디어랩 공모전 본선(10팀) <span style="color:#0f172a;">미스틱링크</span></strong>
+          <strong>[공모전 & 창업 아이템] 2024 코드게이트 글로벌 AI 아이디어랩 공모전 본선(10팀)  <span style="color:var(--text-dark);">미스틱링크</span></strong>
           <span class="sub-text">코드게이트 주관 / AI 기술로 보안성을 강화한 디지털 히든 워터마킹</span>
           <span class="sub-text">창업 아디이어/본선 발표 (2024.08.29)</span>
         </li>
         <li>
-          <strong>[공모전 AI 아이디어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전 본선  <span style="color:#0f172a;">미스틱링크</span></strong>
+          <strong>[공모전 AI 아이디어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전 본선  <span style="color:var(--text-dark);">미스틱링크</span></strong>
           <span class="sub-text">경북 문화 재단 콘텐츠 진흥원 / AI 기술을 활용한 디지털 사이니지</span>
           <span class="sub-text">아디이어/본선 발표 (2024.08)</span>
         </li>
@@ -427,19 +442,19 @@
       <h2 class="section-title">🏆 Awards</h2>
       <ul class="modern-list">
         <li>
-          <strong>[산학협력 프로젝트] 2023년 대경권 우수 성과 공유 워크숍-대학원생 논문 발표 경진대회 <span style="color: #0284c7;">(우수상)</span></strong>
+          <strong>[산학협력 프로젝트] 2023년 대경권 우수 성과 공유 워크숍-대학원생 논문 발표 경진대회 <span style="color: var(--primary-navy);">(우수상)</span></strong>
           <span class="sub-text">수신단 S/W 담당 연구원 참여 (2024.01.22)</span>
         </li>
         <li>
-          <strong>[IR 피칭] 2024 YUnicorn ESG 창업경진대회 <span style="color: #0284c7;">(대상)</span>  <span style="color:#0f172a;">StegaVision</span></strong>
+          <strong>[IR 피칭] 2024 YUnicorn ESG 창업경진대회 <span style="color: var(--primary-navy);">(대상)</span>  <span style="color:var(--text-dark);">StegaVision</span></strong>
           <span class="sub-text">창업 아이디어/IR 자료 담당 (2024.07 - 2024.08)</span>
         </li>
         <li>
-          <strong>[IR 피칭] 2024 G-Star Pitchday <span style="color: #0284c7;">(3차 예선 장려상 & 본선 진출)</span>  <span style="color:#0f172a;">미스틱링크</span></strong>
+          <strong>[IR 피칭] 2024 G-Star Pitchday <span style="color: var(--primary-navy);">(3차 예선 장려상 & 본선 진출)</span> <span style="color:var(--text-dark);">미스틱링크</span></strong>
           <span class="sub-text">창업 아디이어/IR 자료 담당 (3차 예선: 2024.08.23, 본선:2024.09.10)</span>
         </li>
         <li>
-          <strong>[공모전 AI 아이디어어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전 <span style="color: #0284c7;">(장려상)</span>  <span style="color:#0f172a;">미스틱링크</span></strong>
+          <strong>[공모전 AI 아이디어어] 2024 경북 소재 인공지능(AI) 기반 콘텐츠 사업화 아이디어 공모전 <span style="color: var(--primary-navy);">(장려상)</span>  <span style="color:var(--text-dark);">미스틱링크</span></strong>
           <span class="sub-text">아디이어/IR 자료 담당 (수상:2024.11.11)</span>
         </li>
       </ul>
